@@ -196,11 +196,19 @@ body {
   body {
     zoom: 0.80;
   }
+
+  .outro-container {
+    zoom: 1.2;
+  }
 }
 
 @media (resolution: 1.10dppx) {
   body {
     zoom: 0.92;
+  }
+
+  .outro-container {
+    zoom: 1.05;
   }
 }
 
@@ -208,10 +216,18 @@ body {
   body {
     zoom: 0.67;
   }
+
+  .outro-container {
+    zoom: 1.2;
+  }
 }
 
 @media (resolution: .90dppx) {
   body {
     zoom: 1.00;
+  }
+
+  .outro-container {
+    zoom: 1;
   }
 }
