@@ -11,7 +11,7 @@ import "./main.css"
 export default function Main() {
 
     return (
-        <div className="intro-wrapper">
+        <>
             <div className="bg-shape bg-shape--top-left">
                 <img src={introShape2} alt="" />
             </div>
@@ -19,6 +19,7 @@ export default function Main() {
             <div className="bg-shape bg-shape--bottom-right">
                 <img src={introShape1} alt="" />
             </div>
+
             <div className="transition-play">
                 <div className="students students--bottom-right">
                     <dotlottie-wc
@@ -27,45 +28,47 @@ export default function Main() {
                         loop
                     />
                 </div>
+                <div className="intro-wrapper">
 
-                <div className="logos">
-                    <img src={CED} />
-                    <img src={CCIMD} />
-                    <img src={MEG} />
-                </div>
-
-                <div className="main-container">
-
-                    {/* Title Card */}
-                    <div className="title-card">
-                        <h1 className="title-text">
-                            Science
-                        </h1>
-                        <h2 className="subtitle-text">(Concept 2.3 states of matter)</h2>
-
-
-                        <dotlottie-wc
-                            src="https://lottie.host/d2976d47-494a-44a9-8354-3230a1b3d986/7t21tPSPLh.lottie"
-                            autoplay
-                            loop
-                            className="title-icon"
-                        />
+                    <div className="logos">
+                        <img src={CED} />
+                        <img src={CCIMD} />
+                        <img src={MEG} />
                     </div>
 
-                    {/* Middle Text */}
-                    <div className="middle-info">
-                        <h2>Grade 5</h2>
-                        <h3>Semester 1</h3>
-                        <h3>2025–2026</h3>
-                    </div>
+                    <div className="main-container">
 
-                    {/* Buttons */}
-                    <div className="button-row">
-                        <Link to="/members"><button className="btn purple-btn pop">Team Members</button></Link>
-                        <Link to="/content"> <button className="btn orange-btn pop">Content</button></Link>
+                        {/* Title Card */}
+                        <div className="title-card">
+                            <h1 className="title-text">
+                                Science
+                            </h1>
+                            <h2 className="subtitle-text">(Concept 2.3 states of matter)</h2>
+
+
+                            <dotlottie-wc
+                                src="https://lottie.host/d2976d47-494a-44a9-8354-3230a1b3d986/7t21tPSPLh.lottie"
+                                autoplay
+                                loop
+                                className="title-icon"
+                            />
+                        </div>
+
+                        {/* Middle Text */}
+                        <div className="middle-info">
+                            <h2>Grade 5</h2>
+                            <h3>Semester 1</h3>
+                            <h3>2025–2026</h3>
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="button-row">
+                            <Link to="/members"><button className="btn purple-btn pop">Team Members</button></Link>
+                            <Link to="/content"> <button className="btn orange-btn pop">Content</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

@@ -1,4 +1,19 @@
 /* Entire layout container */
+.students--bottom-right {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    bottom: -11%;
+    left: 20%;
+}
+
+.students--bottom-right dotlottie-wc {
+    width: auto;
+    height: auto;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;

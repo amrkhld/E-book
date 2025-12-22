@@ -1,14 +1,16 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   /* cursor: url('/path/to/icon.png') 4 4, pointer; */
 }
+
 
 body {
   font-family: sans-serif;
   color: black;
   background: #F6F6F6;
+  height: 100vh;
   overflow: hidden;
   background: #F6F6F6 url("./assets/bg/bg-equipments.png") no-repeat;
   background-position: 40% center;
@@ -43,19 +45,7 @@ body {
   display: block;
 }
 
-.students--bottom-right {
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-  display: block;
-  left: 980px;
-  top: -20px;
-}
 
-.students--bottom-right dotlottie-wc {
-  width: 1020px;
-  height: 1020px;
-}
 
 /* top-left shape sizing + placement */
 .bg-shape--top-left {
@@ -199,5 +189,29 @@ body {
 
   75% {
     transform: translateX(4px) translateY(-4px) rotate(4deg);
+  }
+}
+
+@media (resolution: 1.25dppx) {
+  body {
+    zoom: 0.80;
+  }
+}
+
+@media (resolution: 1.10dppx) {
+  body {
+    zoom: 0.92;
+  }
+}
+
+@media (resolution: 1.50dppx) {
+  body {
+    zoom: 0.67;
+  }
+}
+
+@media (resolution: .90dppx) {
+  body {
+    zoom: 1.00;
   }
 }
