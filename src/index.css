@@ -11,7 +11,6 @@ body {
   background: #F6F6F6;
   background: #F6F6F6 url("./assets/bg/bg-equipments.png") no-repeat;
   z-index: -2;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 

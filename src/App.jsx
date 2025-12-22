@@ -6,7 +6,7 @@ import Content from "./pages/Content";
 import Members from "./pages/Members";
 import Intro from './pages/Intro';
 import LessonPage from './pages/LessonPage';
-import GamePage from './pages/gamePage';
+import GamePage from './pages/GamePage';
 import QuizPage from './pages/QuizPage';
 
 export default function App() {
