@@ -1,0 +1,267 @@
+.game-wrapper {
+  text-align: center;
+  padding: 40px;
+}
+
+.game-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-family: sf pro rounded;
+  color: #263c78;
+}
+
+.game-card {
+  width: 220px;
+  margin: 0 auto 40px;
+  background: white;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+  cursor: grab;
+  transition: transform .2s ease;
+}
+
+.game-card:active {
+  cursor: grabbing;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.game-card .card-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  color: #263c78;
+  font-size: 1.2rem;
+  padding: 18px 0;
+}
+
+.targets-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.drop-target {
+  min-width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .15);
+  border: 3px dashed #ff3d00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all .25s ease;
+  cursor: grabbing;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+}
+
+.drop-target.hovered {
+  background: #ffeb3b;
+  transform: scale(1.08);
+}
+
+.shake {
+  animation: shake .35s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.game-success {
+  text-align: center;
+  padding: 60px;
+}
+
+.game-actions button {
+  margin: 12px;
+}
+
+
+.game-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.draggables-row {
+  display: flex;
+  gap: 24px;
+  padding: 30px;
+  border: solid 5px #263c78;
+  border-radius: 22px;
+}
+
+.targets-row {
+  display: flex;
+  gap: 32px;
+}
+
+.drop-target.filled {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.drop-target.full {
+  border-style: solid;
+}
+
+.target-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.05rem;
+}
+
+.target-count {
+  background: #263c78;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  margin-left: 5px;
+}
+
+.target-items {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.target-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 72px;
+}
+
+.target-item img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .15);
+}
+
+.target-item-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #263c78;
+  text-transform: capitalize;
+}
+
+.target-pill {
+  background: white;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #263c78;
+  text-transform: capitalize;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .1);
+}
+
+.game-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+
+.game-wrapper.completed {
+  pointer-events: none;
+}
+
+.game-wrapper.completed .game-overlay {
+  pointer-events: auto;
+}
+
+/* Overlay layer */
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: #ffffff8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Congratulation card */
+.congrats-card {
+  background: white;
+  border-radius: 28px;
+  padding: 15px 48px;
+  max-width: 420px;
+  animation: popIn 1.7s ease;
+  outline: #ff3d00 solid 5px;
+}
+
+.congrats-card h1 {
+  font-family: sf pro rounded;
+  margin-bottom: 12px;
+  color: #263c78;
+}
+
+.congrats-card p {
+  font-size: 20px;
+  font-family: sf pro display;
+  color: #ff5722;
+}
+
+
+@keyframes popIn {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.70) rotate(3deg);
+  }
+
+  50% {
+    transform: scale(0.95) rotate(-3deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

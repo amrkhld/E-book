@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* cursor: url('/path/to/icon.png') 4 4, pointer; */
+}
+
+body {
+  font-family: sans-serif;
+  color: black;
+  background: #F6F6F6;
+  background: #F6F6F6 url("./assets/bg/bg-equipments.png") no-repeat;
+  z-index: -2;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+
+.intro-wrapper {
+  position: relative;
+  /* anchor for absolute shapes */
+  overflow: hidden;
+  /* prevents shapes from creating page scroll */
+  z-index: 0;
+  /* creates stacking context so -1 is relative to this */
+  min-height: 100vh;
+  /* ensure wrapper has height; change if you want smaller */
+}
+
+/* common shape styles */
+.bg-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  /* behind the content inside intro-wrapper */
+  display: block;
+}
+
+.students--bottom-right {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  display: block;
+  left: 980px;
+  top: -20px;
+}
+
+.students--bottom-right dotlottie-wc {
+  width: 1020px;
+  height: 1020px;
+}
+
+/* top-left shape sizing + placement */
+.bg-shape--top-left {
+  top: 0px;
+  left: 0px;
+}
+
+/* bottom-right shape sizing + placement */
+.bg-shape--bottom-right {
+  bottom: -100px;
+  right: 0px;
+}
+
+.logos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 70px;
+  padding: 20px;
+}
+
+.logos img {
+  width: 115px;
+  height: 115px;
+}
+
+
+
+/* pop buttons */
+.pop {
+  position: relative;
+  overflow: visible;
+  /* allow color burst to show */
+}
+
+/* Burst circle */
+.pop::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: var(--burst-color, transparent);
+  /* takes the button text color */
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.1);
+  pointer-events: none;
+}
+
+.pop.pop-active::after {
+  animation: burst 0.45s ease-out forwards;
+}
+
+/* Button jiggle */
+.pop.pop-active {
+  animation: popMotion 0.35s ease forwards;
+}
+
+@keyframes popMotion {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.15) rotate(2deg);
+  }
+
+  50% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The visible color pop burst */
+@keyframes burst {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  70% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(2.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+/* Parallax transition animation - right to left */
+.transition-play {
+  animation: parallaxSlideLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes parallaxSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.link-shake {
+  color: #263C78;
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out;
+  display: inline-block;
+}
+
+.link-shake:hover {
+  animation: diagonalShake 0.5s ease-in-out;
+}
+
+@keyframes diagonalShake {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-4px) translateY(-4px) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  75% {
+    transform: translateX(4px) translateY(-4px) rotate(4deg);
+  }
+}

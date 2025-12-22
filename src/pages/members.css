@@ -1,0 +1,92 @@
+.members-page {
+  padding: 120px 20px 60px;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.members-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.members-pill {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.members-title {
+  font-size: 2.2rem;
+  color: #263C78;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.members-title span {
+  color: #FF3D00;
+}
+
+.members-subtitle {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}
+
+.pill-yellow.members-pill {
+    text-align: center;
+    align-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color: #FBD82E;
+    font-size: 3.8rem;
+    font-weight: bold;
+    color: #263C78;
+    font-family: 'SF Pro Display';
+    border-radius: 22px;
+}
+
+/* Grid layout */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+}
+
+/* Individual card */
+.member-card {
+  background: white;
+  border-radius: 18px;
+  padding: 1.6rem 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  border: 3px solid rgba(204, 204, 204, 0.8);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  border-color: #ff9800;
+}
+
+/* Avatar circle */
+.member-avatar {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9800, #ff3d00);
+  color: white;
+  font-weight: 800;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Name */
+.member-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #263C78;
+  font-weight: 700;
+}

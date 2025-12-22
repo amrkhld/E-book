@@ -1,0 +1,18 @@
+.top-frame {
+    position: fixed;
+    width: 2700px; /* Fixed pixel width instead of vw */
+    top: -750px;
+    left: 0;
+    transform: rotate(5deg);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.bottom-right-frame {
+    position: fixed;
+    width:1000px; /* Add explicit width if needed */
+    top: 700px;
+    right: -350px;
+    z-index: -2;
+    pointer-events: none;
+}

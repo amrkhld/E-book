@@ -1,0 +1,100 @@
+/* Entire layout container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* Title Card */
+.title-card {
+    font-family: "SF Pro Rounded";
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    background: #FFD530;
+    border: 8px solid #FF3D00;
+    border-radius: 40px;
+    padding: 40px 30px;
+    box-shadow: 10px 10px 4px -3px rgba(0, 0, 0, 0.47);
+    margin-left: 5%;
+    margin-top: 70px;
+}
+
+/* Main Title */
+.title-text {
+
+    color: #FF3D00;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+/* Subtitle */
+.subtitle-text {
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #263C78;
+    margin-top: 10px;
+}
+
+/* Test tube image */
+.title-icon {
+    position: absolute;
+    width: 300px;
+    top: 0px;
+    right: 160px;
+}
+
+/* Middle text under the card */
+.middle-info {
+    font-family: "SF Pro Rounded";
+    text-align: center;
+    color: #263C78;
+    line-height: 1.4;
+    margin-top: 40px;
+    margin-left: 350px;
+}
+
+.middle-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.middle-info h3 {
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    margin-left: 180px;
+}
+
+/* Base button style */
+.btn {
+    font-family: 'SF Pro Display', sans-serif;
+    width: 277px;
+    height: 75px;
+    padding: 20px 40px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 10px 10px 4px -3px rgba(0, 0, 0, 0.47);
+}
+
+/* Purple Button */
+.purple-btn {
+    background: #6934FF;
+}
+
+/* Orange Button */
+.orange-btn {
+    background: #FF3D00;
+}

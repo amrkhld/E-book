@@ -1,0 +1,94 @@
+.scientest--bottom-left {
+    position: absolute;
+    width: 600px;
+    bottom: -270px;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.shiny-cube--bottom-right {
+    position: absolute;
+    width: 400px;
+    bottom: -210px;
+    right: 20px;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.sparkle--bottom-right {
+    position: absolute;
+    width: 500px;
+    bottom: -300px;
+    right: 0px;
+    pointer-events: none;
+    z-index: -2;
+    transform: rotate(-60deg);
+}
+
+
+.content-container {
+    padding-top: 155px;
+}
+
+.pill-yellow {
+    text-align: center;
+    align-content: center;
+    width: 382px;
+    height: 102px;
+    background-color: #FBD82E;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #263C78;
+    font-family: 'SF Pro Display';
+    border-radius: 22px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-bottom: 26px;
+}
+
+.wrapper-left {
+    padding-left: 80px;
+}
+
+.concept-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.concept-row h1 {
+    font-family: 'SF Pro Display';
+
+}
+
+.pill-red {
+    background-color: #FF3D00;
+    width: 307px;
+    height: 81px;
+    border-radius: 22px;
+    font-size: 3rem;
+    text-align: center;
+    align-content: center;
+    font-family: "SF Pro Rounded";
+    margin-right: 20px;
+}
+
+.content {
+    padding-left: 200px;
+}
+
+ul.list {
+    list-style: none;
+    font-family: 'SF Pro Display';
+    font-size: 2rem;
+}
+
+ul.list li {
+    margin-bottom: 27px;
+}
+
+.chev {
+    color: #FF3D00;
+    margin-right: 15px;
+    font-family: "SF Pro Rounded";
+}
