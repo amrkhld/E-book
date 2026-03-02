@@ -30,11 +30,6 @@ export default function Main() {
                 </div>
                 <div className="intro-wrapper">
 
-                    <div className="logos">
-                        <img src={CED} />
-                        <img src={CCIMD} />
-                        <img src={MEG} />
-                    </div>
 
                     <div className="main-container">
 

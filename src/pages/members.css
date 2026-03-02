@@ -1,24 +1,63 @@
-.members-page {
-  padding: 120px 20px 60px;
+/* ─── Snap Scroll Container ─────────────────────────── */
+.members-snap-container {
+  position: fixed;
+  inset: 0;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
   font-family: "SF Pro Display", sans-serif;
+  z-index: 1;
 }
 
-.members-container {
-  max-width: 1000px;
-  margin: 0 auto;
+.members-snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ─── Every Slide ───────────────────────────────────── */
+.member-snap-slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ─── Intro Slide ───────────────────────────────────── */
+.member-intro-slide {
+  flex-direction: column;
   text-align: center;
+  padding: 0 24px;
+  gap: 18px;
 }
 
 .members-pill {
   display: inline-block;
-  margin-bottom: 14px;
+}
+
+.pill-yellow.members-pill {
+  text-align: center;
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 32px;
+  background-color: #FBD82E;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #263C78;
+  font-family: "SF Pro Display", sans-serif;
+  border-radius: 22px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15);
 }
 
 .members-title {
-  font-size: 2.2rem;
+  font-size: 4.2rem;
   color: #263C78;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin: 0;
+  font-family: "SF Pro Display", sans-serif;
+  line-height: 1.15;
 }
 
 .members-title span {
@@ -26,67 +65,188 @@
 }
 
 .members-subtitle {
-  color: #666;
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-}
-
-.pill-yellow.members-pill {
-    text-align: center;
-    align-content: center;
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    background-color: #FBD82E;
-    font-size: 3.8rem;
-    font-weight: bold;
-    color: #263C78;
-    font-family: 'SF Pro Display';
-    border-radius: 22px;
-}
-
-/* Grid layout */
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.4rem;
-}
-
-/* Individual card */
-.member-card {
-  background: white;
-  border-radius: 18px;
-  padding: 1.6rem 1rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-  border: 3px solid rgba(204, 204, 204, 0.8);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-  border-color: #ff9800;
-}
-
-/* Avatar circle */
-.member-avatar {
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff9800, #ff3d00);
-  color: white;
-  font-weight: 800;
+  color: #555;
   font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
 }
 
-/* Name */
-.member-card h3 {
-  margin: 0;
-  font-size: 1.05rem;
-  color: #263C78;
+.members-start-btn {
+  margin-top: 10px;
+  padding: 18px 48px;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 1.4rem;
   font-weight: 700;
+  color: white;
+  background: #263C78;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.members-start-btn:hover {
+  background: #FF3D00;
+  transform: translateY(-3px);
+}
+
+/* ─── Member Slide ──────────────────────────────────── */
+.member-slide {
+  padding: 150px 150px 100px;
+  gap: 0;
+}
+
+/* Inner wrapper: photo left, info right */
+.member-slide>.member-photo-panel,
+.member-slide>.member-info-panel {
+  /* nothing — handled below */
+}
+
+/* The slide is a flex row */
+.member-slide {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ─── Photo Panel ───────────────────────────────────── */
+.member-photo-panel {
+  flex: 0 0 42%;
+  height: 82vh;
+  border-radius: 28px 0 0 28px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.member-slide-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* subtle gradient overlay at bottom of photo */
+.member-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  opacity: 0.55;
+}
+
+/* ─── Info Panel ────────────────────────────────────── */
+.member-info-panel {
+  flex: 1;
+  height: 82vh;
+  background: white;
+  border-radius: 0 28px 28px 0;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+  padding: 52px 52px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ─── Tag ───────────────────────────────────────────── */
+.member-tag {
+  display: inline-block;
+  width: fit-content;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Name / Major / Uni ────────────────────────────── */
+.member-slide-name {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: #263C78;
+  margin: 0;
+  line-height: 1.15;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.member-slide-major {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.member-slide-university {
+  font-size: 1.1rem;
+  color: #888;
+  margin: 0;
+}
+
+/* ─── Divider ───────────────────────────────────────── */
+.member-divider {
+  height: 4px;
+  width: 56px;
+  border-radius: 4px;
+  opacity: 0.85;
+}
+
+/* ─── Role text ─────────────────────────────────────── */
+.member-slide-role {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ─── Number Counter ────────────────────────────────── */
+.member-counter {
+  position: absolute;
+  bottom: 28px;
+  right: 36px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #e8e8e8;
+  font-family: "SF Pro Display", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Dot Navigation ────────────────────────────────── */
+.member-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.member-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #263C78;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.member-dot--active {
+  background: #263C78;
+  transform: scale(1.4);
+}
+
+.member-dot:hover {
+  background: #FF3D00;
+  border-color: #FF3D00;
 }
