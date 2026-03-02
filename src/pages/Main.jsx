@@ -2,9 +2,7 @@
 import { Link } from 'react-router-dom';
 import introShape1 from "../assets/shapes/intro_shape1.svg";
 import introShape2 from "../assets/shapes/intro_shape2.svg";
-import CED from "../assets/logos/CED.png"
-import CCIMD from "../assets/logos/CCIMD.png"
-import MEG from "../assets/logos/MEG.png"
+import facLogo from "../assets/logos/fac-logo.jpg";
 
 import "./main.css"
 
@@ -12,6 +10,8 @@ export default function Main() {
 
     return (
         <>
+            <img src={facLogo} alt="Faculty Logo" className="fac-logo" />
+
             <div className="bg-shape bg-shape--top-left">
                 <img src={introShape2} alt="" />
             </div>
