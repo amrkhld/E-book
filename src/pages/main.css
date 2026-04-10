@@ -124,3 +124,9 @@
 .orange-btn {
     background: #FF3D00;
 }
+
+/* Yellow Button */
+.yellow-btn {
+    background: #FFC000;
+    color: #fff;
+}

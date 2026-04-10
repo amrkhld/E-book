@@ -19,6 +19,11 @@ export default function LessonPage() {
   const hasPrev = topicLessons?.[currentPart - 1];
   const hasNext = topicLessons?.[currentPart + 1];
 
+  const topics = Object.keys(lessons);
+  const currentTopicIndex = topics.indexOf(topic);
+  const nextTopic = topics[currentTopicIndex + 1];
+  const nextLessonPath = nextTopic ? `/content/${nextTopic}/1` : null;
+
   return (
     <>
       <BackgroundFrame />
@@ -46,6 +51,7 @@ export default function LessonPage() {
         outro={content.outro}
         topic={topic}
         part={currentPart}
+        nextLessonPath={nextLessonPath}
       />
     </>
   );

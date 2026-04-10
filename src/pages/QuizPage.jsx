@@ -33,7 +33,7 @@ export default function QuizPage() {
 
   const q = questions[current];
   const totalQuestions = questions.length;
-  const passScore = Math.ceil(totalQuestions * 0.7);
+  const passScore = 3;
   const hasFinished = current >= totalQuestions;
   const hasPassed = score >= passScore;
 
@@ -42,12 +42,17 @@ export default function QuizPage() {
 
     if (hasPassed) {
       playSuccess();
+      const passedList = JSON.parse(localStorage.getItem('passed_quizzes') || '[]');
+      if (!passedList.includes(topic)) {
+        passedList.push(topic);
+        localStorage.setItem('passed_quizzes', JSON.stringify(passedList));
+      }
     } else {
       playFail();
     }
 
     resultSoundPlayedRef.current = true;
-  }, [hasFinished, hasPassed, playFail, playSuccess]);
+  }, [hasFinished, hasPassed, playFail, playSuccess, topic]);
 
   function checkAnswer() {
     if (selected === null) return;

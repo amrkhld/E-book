@@ -2,6 +2,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import dropletNote from '../assets/general/droplet_note.gif'
+import nextIcon from '../assets/general/next.svg'
 
 
 import "./lesson.css";
@@ -16,10 +17,14 @@ const Lesson = ({
     videoContent = null,
     outro,
     topic,
-    part
+    part,
+    nextLessonPath
 }) => {
 
     const navigate = useNavigate();
+    
+    const passedList = JSON.parse(localStorage.getItem('passed_quizzes') || '[]');
+    const hasPassedCurrentTopic = passedList.includes(topic);
 
     if (outro) {
         return (
@@ -43,6 +48,30 @@ const Lesson = ({
                         >
                             Take a Quiz
                         </button>
+
+                        {nextLessonPath && (
+                            <button
+                                className={`btn ${hasPassedCurrentTopic ? 'yellow-btn pop' : ''}`}
+                                onClick={() => {
+                                    if (hasPassedCurrentTopic) {
+                                        navigate(nextLessonPath);
+                                    } else {
+                                        alert("You must pass the quiz with at least 3 points to unlock the next lesson!");
+                                    }
+                                }}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                    backgroundColor: hasPassedCurrentTopic ? '' : '#aaa',
+                                    cursor: hasPassedCurrentTopic ? 'pointer' : 'not-allowed'
+                                }}
+                            >
+                                Next Lesson
+                                {hasPassedCurrentTopic && <img src={nextIcon} alt="" style={{ width: '28px', height: '28px' }} />}
+                            </button>
+                        )}
 
 
                     </div>
